@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel administrador</title>
+</head>
+
+    <header>
+        <div class="nav-admin">
+            <label class="admin-panel">PANEL ADMINISTRADOR</label>
+            <a href="/loginAdmin"><button class="button-admin-logout">logout</button></a>
+        </div>
+    </header>
+<body class="body-admin">
+    <div class="container-panel-admin">
+        <a href="/create"><i></i></a>
+        <table class="table">
+            <tbody class="tbody-admin">
+                <thead class="title-fixed-admin">
+                    <tr class="title-fixed">
+                        <th scope="col" class="th-admin">Id</th>
+                        <th scope="col" class="th-admin">Nombre</th>
+                        <th scope="col" class="th-admin">Descripcion</th>
+                        <th scope="col" class="th-admin">Imagen</th>
+                        <th scope="col" class="th-admin">Categoria</th>
+                        <th scope="col" class="th-admin">Precio</th>
+                        <th scope="col" class="th-admin">Stock</th>
+                    </tr>
+                </thead>
+                <% products.forEach(function(product){ %>
+                <tr>
+                    <td class="data-json"><%= product.id %></td>
+                    <td class="data-json"><%= product.name %></td>
+                    <td class="data-json-desc"><%= product.description %></td>
+                    <td><img class= "images-products-admin" src="/images/<%= product.image %>" alt="image"></td>
+                    <td class="data-json"><%= product.category %></td>
+                    <td class="data-json"><%= product.price %></td>
+                    <td class="data-json"><%= product.stock %></td>
+                    <td>
+                        <a href="/edit" class="button-admin-classAll">Editar</a>
+                    <form method="POST" action="/products/delete/?_method=DELETE">
+                        <button>Delete</button>
+                    </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+            <a href="/panelAdmin/create" class="button-new-product">Nuevo producto</a>
+        </table>
+
+        
+
+    </div>
+</body>
+</html>

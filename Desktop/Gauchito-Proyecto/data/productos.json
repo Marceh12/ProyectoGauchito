@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name": "carne clásica",
+    "description": " Horneadas y rellenas con picadillo de carne de res molida, cebolla, pimentón, ají molido, comino, orégano, huevo duro y aceitunas.",
+    "image": "emp-carne.jpg",
+    "category": "empanadas",
+    "price": 596.59,
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "name": "empanada de pollo",
+    "description": "Horneadas y rellenas con carne de pollo",
+    "image": "emp-pollo.jpg",
+    "category": "empanadas",
+    "price": 838.73,
+    "stock": 100
+  },
+  {
+    "id": 3,
+    "name": "jamón y queso",
+    "description": "morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis",
+    "image": "emp-jyq.jpg",
+    "category": "empanadas",
+    "price": 325.04,
+    "stock": 100
+  },
+  {
+    "id": 4,
+    "name": "espinaca y queso",
+    "description": "pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio",
+    "image": "emp-eyq.jpg",
+    "category": "empanadas",
+    "price": 342.1,
+    "stock": 100
+  },
+  {
+    "id": 5,
+    "name": "humita y queso",
+    "description": "nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra",
+    "image": "emp-hyq.jpg",
+    "category": "empanadas",
+    "price": 870.76,
+    "stock": 100
+  },
+  {
+    "id": 6,
+    "name": "carne picante",
+    "description": "in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis",
+    "image": "emp-carnepicante.jpg",
+    "category": "empanadas",
+    "price": 944.99,
+    "stock": 100
+  },
+  {
+    "id": 7,
+    "name": "alfajor negro",
+    "description": "vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam",
+    "image": "alf-choc.webp",
+    "category": "alfajores",
+    "price": 354.03,
+    "stock": 100
+  },
+  {
+    "id": 8,
+    "name": "alfajor maicena",
+    "description": "aliquam sit amet diam in magna bibendum imperdiet nullam orci",
+    "image": "alf-maic.webp",
+    "category": "alfajores",
+    "price": 994.93,
+    "stock": 100
+  },
+  {
+    "id": 9,
+    "name": "milka mix",
+    "description": "ut odio cras mi pede malesuada in imperdiet et commodo",
+    "image": "alf-milka.jpeg",
+    "category": "alfajores",
+    "price": 384.68,
+    "stock": 100
+  },
+  {
+    "id": 10,
+    "name": "caja havanna x24",
+    "description": "in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
+    "image": "alf-havanna.jfif",
+    "category": "alfajores",
+    "price": 619.46,
+    "stock": 100
+  },
+  {
+    "id": 11,
+    "name": "cachafaz",
+    "description": "habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis",
+    "image": "alf-cachafaz.jpg",
+    "category": "alfajores",
+    "price": 967.01,
+    "stock": 100
+  },
+  {
+    "id": 12,
+    "name": "alfajor blanco",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "alf-blanco.jpg",
+    "category": "alfajores",
+    "price": 461,
+    "stock": 100
+  },
+  {
+    "id": 13,
+    "name": "mate tradicional",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-tradicional.jpg",
+    "category": "mate",
+    "price": 461,
+    "stock": 100
+  },
+  {
+    "id": 14,
+    "name": "mate termico",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-termico.jpg",
+    "category": "mate",
+    "price": 461,
+    "stock": 100
+  },
+  {
+    "id": 15,
+    "name": "yerba mate por kilo",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-yerba.jpg",
+    "category": "mate",
+    "price": 461,
+    "stock": 100
+  },
+  {
+    "id": 16,
+    "name": "kit mate",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-kit.png",
+    "category": "mate",
+    "price": 461,
+    "stock": 100
+  },
+  {
+    "id": 17,
+    "name": "bolso para mate",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-bolso.jpg",
+    "category": "mate",
+    "precio": 461,
+    "stock": 100
+  },
+  {
+    "id": 18,
+    "name": "bombilla para mate",
+    "description": "cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam",
+    "image": "mat-bombilla.jpeg",
+    "category": "mate",
+    "price": 461,
+    "stock": 100
+  }
+]

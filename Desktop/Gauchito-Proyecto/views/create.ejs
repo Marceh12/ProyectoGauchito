@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear producto</title>
+</head>
+
+<body class="body-create-admin">
+    <form class="form-admin" method="post" action="/panelAdmin/create" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" name="name" aria-describedby="nombre" placeholder="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Descripción</label>
+            <input type="text" class="form-control-desc" name="description" aria-describedby="descripcion" placeholder="descripcion">
+        </div>
+
+        <div class="form-group-img">
+            <label for="picture">Imagen</label>
+            <input type="file" name = "productImage">
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Categoria</label>
+            <select name = "category" id = "category">
+                <option value="empanadas">empanadas</option>
+                <option value="alfajores">alfajores</option>
+                <option value="mate">mate</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="nombre">Precio</label>
+            <input type="number" class="form-control" name="price" aria-describedby="precio" placeholder="precio">
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Stock</label>
+            <input type="number" class="form-control" name="stock">
+        </div>
+
+        <div class="container-button-create">
+            <input type="submit" class="button-admin-create" value = 'Guardar'>
+            <a href="/panelAdmin" class="button-admin-create">Cancelar</a>
+        </div>
+      </form>
+</body>
+</html>

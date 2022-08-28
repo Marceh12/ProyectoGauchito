@@ -1,50 +1,36 @@
+const path = require('path');
+const fs = require('fs');
+const productsJson = path.join(__dirname, '../data/productos.json');
+const products = JSON.parse(fs.readFileSync(productsJson, 'utf-8'));
+
+
 const controller =  {
     index: (req, res) => {
         res.render('index')
     },
 
     register: (req, res) => {
-        res.render('register')
+        res.render('register')  
     },
 
     login: (req, res) => {
         res.render('login')
     },
 
-    productsAlfajores: (req, res) => {
-        res.render('productsAlfajores')
-    },
-
-    productsEmpanadas: (req, res) => {
-        res.render('productsEmpanadas')
-    },
-
-    productsMates: (req, res) => {
-        res.render ('productsMates')
-    },
-
-    panelAdministrator: (req, res) => {
-        res.render ('panelAdministrator')
+    panelAdmin: (req, res) => {
+        res.render ('panelAdmin')
     },
 
     loginAdmin: (req, res) => {
         res.render ('loginAdmin')
     },
 
-    panelAdminEmp: (req, res) => {
-        res.render ('panelAdminEmp')
+    create: (req, res) => {
+        res.render ('create')
     },
 
-    panelAdminAlf: (req, res) => {
-        res.render ('panelAdminAlf')
-    },
-
-    panelAdminMat: (req, res) => {
-        res.render ('panelAdminMat')
-    },
-
-    panelAdminModif: (req, res) => {
-        res.render ('panelAdminModif')
+    edit: (req, res) => {
+        res.render ('edit')
     }
 }
 
