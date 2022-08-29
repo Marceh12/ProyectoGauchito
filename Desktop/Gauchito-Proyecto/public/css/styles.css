@@ -175,12 +175,19 @@ footer {
 
 .card-products {
   width: 25%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 5px;
-  background-color: #99a3ff;
+  border-radius: 15px;
+  background-color: #afb4e2;
+  flex-wrap: wrap;
+}
+
+.card-products:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 0 1.5em rgba(0,0,0,0.8);;
 }
 
 .intro {
@@ -195,14 +202,15 @@ footer {
   height: 30px;
   border: 1px solid white;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .images-products {
   width: 80%;
   height: 50%;
-  border-radius: 3px;
+  border-radius: 6px;
   margin-top: 10px;
+  
 }
 
 .precio {

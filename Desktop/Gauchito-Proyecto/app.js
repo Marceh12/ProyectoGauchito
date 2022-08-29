@@ -21,9 +21,6 @@ const adminRoutes = require('./routes/adminRoutes');
 //para requerir css
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-//Requerir el middleware que controla si el usuario está o no Logueado
-// const access = require('./middlewares/access');
-
 //urlencoded permite capturar informacion enviada en un formulario via POST mediante el metodo req.body
 app.use (express.urlencoded({extended: false}));
 app.use (express.json());
