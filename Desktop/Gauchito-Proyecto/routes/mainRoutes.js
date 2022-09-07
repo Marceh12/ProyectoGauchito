@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const {body} = require('express-validator');
-
-const dataJson = require('../data/productos.json');
-// rutas
-// const adminController = require('../controller/adminController');
 const mainController = require("../controllers/mainController");
 const userController = require('../controllers/userController');
 

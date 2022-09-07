@@ -30,7 +30,7 @@
                         <th scope="col" class="th-admin">Stock</th>
                     </tr>
                 </thead>
-                <% products.forEach(function(product){ %>
+                <% product.forEach(function(product){ %>
                 <tr>
                     <td class="data-json"><%= product.id %></td>
                     <td class="data-json"><%= product.name %></td>
@@ -40,9 +40,10 @@
                     <td class="data-json"><%= product.price %></td>
                     <td class="data-json"><%= product.stock %></td>
                     <td>
-                        <a href="/edit" class="button-admin-classAll">Editar</a>
-                    <form method="POST" action="/products/delete/?_method=DELETE">
-                        <button class="button-admin-classAll">Delete</button>
+                        <a href="panelAdmin/edit/<%= product.id%>" class="button-admin-classAll">Editar</a>
+
+                    <form action="/panelAdmin/delete/<%= product.id%>?_method=DELETE" method="POST">
+                        <button class="button-admin-classAll" type="submit">Delete</button>    
                     </form>
                     </td>
                 </tr>

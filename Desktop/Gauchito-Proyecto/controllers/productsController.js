@@ -4,7 +4,7 @@ let db = require('../src/database/models')
 
 const productsController = {
     productsCategory: function(req,res){
-        db.Products.findAll({
+        db.Product.findAll({
             where:{category: req.params.category}
         })
         .then((products)=>

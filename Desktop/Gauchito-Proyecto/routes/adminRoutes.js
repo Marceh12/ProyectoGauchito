@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const dataJson = require('../data/productos.json');
 const adminController = require('../controllers/admincontroller');
 const multer = require ('multer');
 const path = require ('path');
@@ -28,7 +27,7 @@ router.post('/create',upload.single('productImage'), adminController.newProduct)
 
 //ruta editar productos
 router.get('/edit/:id', adminController.edit);
-router.put('/edit/:id', adminController.edit);
+router.put('/edit/:id',upload.single('productImage'), adminController.update);
 
 //ruta para borrar productos
 router.delete('/delete/:id', adminController.delete);

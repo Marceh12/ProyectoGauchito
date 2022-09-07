@@ -9,45 +9,55 @@
 </head>
 
 <body class="body-create-admin">
-    <form class="form-admin" method="POST" action="/panelAdmin/edit/<%= productToEdit.id %>?_method=PATCH" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" name="name" value="<%= productToEdit.name %>">
-        </div>
+    <form class="form-admin" method="POST" action="/panelAdmin/edit/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+        <div class="contenedor-form">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="name" value="<%= productToEdit.name %>">
+                <input type="hidden" name="dataViejaName" value="<%= productToEdit.name %>">
+            </div>
 
-        <div class="form-group">
-            <label for="nombre">Descripción</label>
-            <input type="text" class="form-control-desc" name="description" value="<%= productToEdit.description %>">
-        </div>
+            <div class="form-group">
+                <label for="nombre">Descripción</label>
+                <input type="text" class="form-control-desc" name="description" value="<%= productToEdit.description %>">
+                <input type="hidden" name="dataViejaDescription" value="<%= productToEdit.description %>">
+            </div>
 
-        <div class="form-group-img">
-            <label for="picture">Imagen</label>
-            <input type="file" name="productImage" value="<%= productToEdit.image %>">
-        </div>
+            <div class="form-group-img">
+                <label for="picture">Imagen</label>
+                <input type="file" name="productImage" value="<%= productToEdit.image %>">
+                <input type="hidden"  name="dataViejaImage" value="<%= productToEdit.image %>"  img src="/images/<%= productToEdit.image %>">
+            </div>
 
-        <div class="form-group">
-            <label for="nombre">Categoria</label>
-            <select name = "category" id = "category">
-                <option value="empanadas">empanadas</option>
-                <option value="alfajores">alfajores</option>
-                <option value="mate">mate</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="nombre">Categoria</label>
+                <select name = "category" id = "category">
+                    <option value="empanadas">empanadas</option>
+                    <option value="alfajores">alfajores</option>
+                    <option value="mate">mate</option>
+                </select>
+                <input type="hidden" name="dataViejaCategory" value="<%= productToEdit.category %>">
+            </div>
         
-        <div class="form-group">
-            <label for="nombre">Precio</label>
-            <input type="number" class="form-control" name="price" value="<%= productToEdit.price %>">
-        </div>
+            <div class="form-group">
+                <label for="nombre">Precio</label>
+                <input type="number" class="form-control" name="price" value="<%= productToEdit.price %>">
+                <input type="hidden" name="dataViejaPrice" value="<%= productToEdit.price %>">
+            </div>
 
-        <div class="form-group">
-            <label for="nombre">Stock</label>
-            <input type="number" class="form-control" name="price" value="<%= productToEdit.stock %>">
+            <div class="form-group">
+                <label for="nombre">Stock</label>
+                <input type="number" class="form-control" name="stock" value="<%= productToEdit.stock %>">
+                <input type="hidden" name="dataViejaStock" value="<%= productToEdit.stock %>">
+            </div>
         </div>
 
         <div class="container-button-create">
             <input type="submit" class="button-admin-edit" value="Guardar">
             <a href="/panelAdmin" class="button-admin-edit">Cancelar</a>
         </div>
-      </form>
+
+    
+    </form>
 </body>
 </html>

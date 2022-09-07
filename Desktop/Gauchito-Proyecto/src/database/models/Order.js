@@ -1,23 +1,29 @@
 module.exports= (sequelize, dataTypes) => {
-    let alias = "Product_category";
+    let alias = "Order";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        product_id: {
+        user_id: {
             type: dataTypes.INTEGER
         },
-        category_id: {
+        total_amount: {
             type: dataTypes.INTEGER
+        },
+        email:  {
+            type: dataTypes.STRING
+        },
+        adress: {
+            type: dataTypes.STRING
         }
     }
     let config= {
-        tableName: "product_category",
+        tableName: "order",
         timestamps: false
     }
-    const Product_category = sequelize.define(alias,cols,config)
-    return Product_category
+    const Order = sequelize.define(alias,cols,config)
+    return Order
 
 }
