@@ -14,12 +14,16 @@ const validations = [
 
 router.get("/", mainController.index);
 
+// Login aministrador
+router.get("/loginAdmin",mainController.loginAdmin);
+
+// Login Usuarios
 router.get("/login", mainController.login);
 
+/*Rutas para registro de usuarios*/
 router.get("/register", mainController.register);
-
 router.post('/register',validations, userController.create);
 
-router.get("/loginAdmin",mainController.loginAdmin);
+
 
 module.exports = router;

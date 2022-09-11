@@ -1,15 +1,14 @@
 const fs = require ('fs');
 const path = require ('path');
 const {validationResult} = require ('express-validator');
-
-
-
+let db = require('../src/database/models')
 
 
 const user = {
 
-    getData: function(){
-        return JSON.parse (fs.readFileSync(this.fileName, 'utf-8'));        
+    getData: function(req,res){
+        db.User.findAll()   
+        .then(usuarios=> console.log(usuarios))    
     },
     
     generateId: function(){

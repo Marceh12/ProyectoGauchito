@@ -9,6 +9,7 @@ const path = require('path');
 
 
 router.get('/:category', productsController.productsCategory);
+router.get('/:id', productsController.productdetail)
 
 
 

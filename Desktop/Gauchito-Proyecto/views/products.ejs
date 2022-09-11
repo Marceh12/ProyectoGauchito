@@ -19,29 +19,29 @@
                 <% products.forEach(function(product){ %>
                     <div class="card-products">
                         <img class= "images-products" src="/images/<%= product.image %>" alt="image">
-                        <div class="intro">
-                            <h1><%= product.name %></h1>
-                        </div>
-                        <label class="precio">$<p class="precios"><%= product.price %></p></label>
-                            <label for="quantity" class="quantity">Cantidad
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
-                                </select>
-                            </label>
-                        <br />
-                        <button class = "button-agregar">AGREGAR</button>
+                            <div class="intro">
+                                <a href="/products/<%= product.id %>"><%= product.name %></a>
+                            </div>
+                                <label class="precio">$<p class="precios"><%= product.price %></p></label>
+                                <label for="quantity" class="quantity">Cantidad
+                                    <select>
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </label>
+                                <br />
+                                <button class = "button-agregar">AGREGAR</button>
                     </div>
                 <% }) %> 
             </section>
