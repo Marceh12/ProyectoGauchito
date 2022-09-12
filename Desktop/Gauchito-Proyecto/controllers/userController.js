@@ -2,6 +2,7 @@ const fs = require ('fs');
 const path = require ('path');
 const {validationResult} = require ('express-validator');
 let db = require('../src/database/models')
+var bcrypt = require('bcryptjs');
 
 
 const user = {
@@ -10,13 +11,17 @@ const user = {
         db.User.findAll()   
         .then(usuarios=> console.log(usuarios))    
     },
-    
-    generateId: function(){
-        let allUsers = this.findAll();
-        let lastUser = allUsers.pop();
-        if (lastUser){
-        return lastUser.id + 1;}
-        return 1;
+
+    login: (req, res) => {
+        res.render('login')
+    },
+
+    loginAdmin: (req, res) => {
+        res.render ('loginAdmin')
+    },
+
+    panelAdmin: (req, res) => {
+        res.render ('panelAdmin')
     },
 
     findAll: function(){
@@ -24,41 +29,26 @@ const user = {
     },
 
     findByPk: function(id){
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser.id == id)
-        return userFound;
+    },
+    
+    register: (req, res) => {
+        res.render('register')  
     },
 
     create: function (req, res) {
-        const resultValidation = validationResult (req);
-        
-        if (resultValidation.errors.length > 0){
-            res.render ('register', {
-                errors: resultValidation.mapped(),
-            });
-        }
-
-        let user = [{
+        let user = {
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password,
-            password2: req.body.password2,
-            image: '',
-            
-        }]
-        
-        usersJSON.push(user)
-
-        usersJSON = JSON.stringify(usersJSON, null, 2);
-        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usersJSON);
-        res.redirect('/login');
+            image: req.file.filename,
+            password: bcrypt.hashSync(req.body.password, 10)
+        }
+        console.log (user)
+        db.User.create(user)
+        res.redirect('/')
     },
 
-    delete: function(id){
-        let allUsers = this.findAll();
-        let finalUsers = allUsers.filter(oneUser => oneUser.id != id);
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ()=> {}));
-        return true
+    delete: function(req,res){
+        
     }
 }
 

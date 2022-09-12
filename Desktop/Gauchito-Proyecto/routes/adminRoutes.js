@@ -4,7 +4,7 @@ const adminController = require('../controllers/admincontroller');
 const multer = require ('multer');
 const path = require ('path');
 const { Console } = require('console');
-const { productsAll } = require('../controllers/admincontroller');
+// const { productsAll } = require('../controllers/admincontroller');
 
 let storage = multer.diskStorage({
     destination:(req, file, cb) => {

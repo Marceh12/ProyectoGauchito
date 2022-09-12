@@ -16,7 +16,7 @@ const adminController = {
         res.render('create');
     },
 
-    'newProduct': function(req,res){
+    newProduct: function(req,res){
         let product = {
             name: req.body.name,
             category: req.body.category,

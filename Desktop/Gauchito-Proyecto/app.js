@@ -17,6 +17,7 @@ const { ppid } = require('process');
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const adminRoutes = require('./routes/adminRoutes');
+const userRoutes = require('./routes/userRoutes')
 
 //urlencoded permite capturar informacion enviada en un formulario via POST mediante el metodo req.body
 app.use (express.urlencoded({extended: false}));
@@ -33,6 +34,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/panelAdmin', adminRoutes);
+app.use('/users', userRoutes);
 
 // //Aqui coloco el Middleware para activar lo referido a las cookies
 // app.use(cookieParser());
