@@ -196,13 +196,16 @@ footer {
 }
 
 .button-agregar {
+  font-family: 'Roboto Mono', monospace;
   background-color: #3e4ab8;
   color: white;
+  font-weight: 500;
   width: 100px;
   height: 30px;
-  border: 1px solid white;
+  border: 1px solid rgb(92, 103, 110);
   border-radius: 3px;
   margin-bottom: 5px;
+  margin-top: 5%;
 }
 
 .images-products {
@@ -217,6 +220,92 @@ footer {
   display: flex;
   margin-top: 5px;
 }
+
+/*DETALLE PRODUCTOS*/
+
+.link-detalle-prod{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+  color: #4051e8;
+
+}
+
+.precio, .quantity{
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  color: #2c3371;
+}
+
+.cuerpo-detalle{
+  height: 80vh;
+  width: 100%;
+  background-color: wheat;
+}
+
+.body-detalle{
+  margin: 0%;
+  width: 100%;
+  height: 100%;  
+  background-color: #cfd7dc56;
+  
+}
+
+.contenedor-detalle{
+  display: flex;
+  width: 80%;
+  margin: 100px; 
+  
+  
+}
+
+.imagen-detalle{
+  width: 40%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgb(71, 67, 67);
+}
+
+.detalle-contenedor-derecha{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+
+.detalle-contenedor-derecha h1 {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(108, 108, 227);
+  font-weight: 800;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+.detalle-contenedor-derecha, p, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(49, 51, 62);
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.detalle-contenedor-derecha h3{
+  font-size: 25px;
+  
+}
+
+.agrega-carrito{
+  background-color: #3949d7;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 30px;
+  width: 20%;
+}
+
 
 /* fin styles productos */
 

@@ -23,7 +23,8 @@ const upload = multer({storage})
 router.get("/loginAdmin",userController.loginAdmin);
 
 // Login Usuarios
-router.get("/login", userController.login);
+router.get("/login", userController.vistaLogin);
+router.post("/login", userController.login);
 
 /*Rutas para registro de usuarios*/
 router.get("/register", userController.register);

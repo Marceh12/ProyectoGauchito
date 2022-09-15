@@ -10,8 +10,6 @@ const methodOverride = require('method-override')
 
 // ver
 const { json } = require('express');
-// ver
-const { ppid } = require('process');
 
 //rutas
 const mainRoutes = require("./routes/mainRoutes");
@@ -31,10 +29,8 @@ app.use(methodOverride('_method'))
 //correcion ruta para css
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-app.use('/', mainRoutes);
-app.use('/products', productsRoutes);
-app.use('/panelAdmin', adminRoutes);
-app.use('/users', userRoutes);
+app.use(express.urlencoded({extended:false}));
+app.use(express(json));
 
 // //Aqui coloco el Middleware para activar lo referido a las cookies
 // app.use(cookieParser());
@@ -51,9 +47,10 @@ app.listen(process.env.PORT || 3050, function () {
 
 /////nuevo
 //capturar datos del formulario
-app.use(express.urlencoded({extended:false}));
-app.use(express(json));
 
-
+app.use('/', mainRoutes);
+app.use('/products', productsRoutes);
+app.use('/panelAdmin', adminRoutes);
+app.use('/users', userRoutes);
 
 

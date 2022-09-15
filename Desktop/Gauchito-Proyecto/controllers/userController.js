@@ -12,8 +12,33 @@ const user = {
         .then(usuarios=> console.log(usuarios))    
     },
 
+    vistaLogin: (req, res) => {
+        res.render ('login')
+    },
+
     login: (req, res) => {
-        res.render('login')
+        db.User.findOne({
+        where: {email: req.body.email}
+        })
+        .then (user=>{
+            if (user){
+                let pass = bcrypt.compareSync(req.body.password, user.password)
+
+                if(pass){
+                    delete user.password
+                    //login
+                    //render vista
+                    res.send(user)
+                }
+                else{
+                    res.render('login')
+                }         
+            }
+            else{
+                res.render('login')
+            }
+        } )
+        
     },
 
     loginAdmin: (req, res) => {
@@ -42,7 +67,7 @@ const user = {
             image: req.file.filename,
             password: bcrypt.hashSync(req.body.password, 10)
         }
-        console.log (user)
+        
         db.User.create(user)
         res.redirect('/')
     },

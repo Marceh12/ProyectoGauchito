@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
     <title>Gauchito Git</title>
 </head>
 
@@ -20,10 +21,10 @@
                     <div class="card-products">
                         <img class= "images-products" src="/images/<%= product.image %>" alt="image">
                             <div class="intro">
-                                <a href="/products/<%= product.id %>"><%= product.name %></a>
+                                <a href="/products/detail/<%= product.id %>" class="link-detalle-prod"><%= product.name %></a>
                             </div>
-                                <label class="precio">$<p class="precios"><%= product.price %></p></label>
-                                <label for="quantity" class="quantity">Cantidad
+                                <label><span class="precio">$<%= product.price %></span></label>
+                                <label for="quantity"><span class="quantity">Cantidad</span> 
                                     <select>
                                         <option>0</option>
                                         <option>1</option>

@@ -15,13 +15,13 @@
             <div class="forms">
                 <span class="title">Login</span>
 
-                <form action="#">
+                <form action="/users/login" method="POST">
                 <div class="input-field">
-                        <input type="text" placeholder="Ingresa tu email" required>
+                        <input type="text" placeholder="Ingresa tu email" name="email" required>
                         <img src="/images/person-circle.svg">
                     </div>
                     <div class="input-field">
-                        <input type="password" placeholder="Ingresa tu password" required>
+                        <input type="password" placeholder="Ingresa tu password" name="password" required>
                         <img src="/images/key-fill.svg">
                     </div>
 
@@ -33,11 +33,11 @@
                         <a href="#" class="text">Olvidaste tu contraseña?</a>
                     </div>
                     
-                    <a href="/">
+                    
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        <input type="submit" value="Login">
                     </div>
-                    </a>
+                    
                 </form>
 
                 <div class="login-signup">
