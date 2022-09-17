@@ -19,16 +19,16 @@
                 
                 <form method="post" action="/users/register" enctype="multipart/form-data" >
                     <div class="input-field">
-                        <input type="text" placeholder="Ingresa tu nombre" id = "name" required name="name">
+                        <input type="text" placeholder="Ingresa tu nombre" id = "name"  name="name" value="<%= locals.oldData ? oldData.name : null%>">
                         <img src="/images/person-circle.svg" alt="icono">
                         <% if (locals.errors && errors.name){ %>
                         <div class = "errorMessage">
-                            <%= errors.name.msg %>
+                            <p><%= errors.name.msg %></p>
                         </div>
                         <% } %>
                     </div>
                     <div class="input-field">
-                        <input type="mail" placeholder="Ingresa tu email" id = "email" required value = "m" name="email">
+                        <input type="mail" placeholder="Ingresa tu email" id = "email" name="email" value="<%= locals.oldData ? oldData.email : null%>">
                         <img src="/images/envelope.svg">
                         <% if (locals.errors && errors.email){ %>
                             <div class = "errorMessage">
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="input-field">
-                        <input type="password" placeholder="Ingresa tu password" id = "password" required value="" name="password">
+                        <input type="password" placeholder="Ingresa tu password" id = "password"  value="" name="password">
                         <img src="/images/key-fill.svg">
                         <% if (locals.errors && errors.password){ %>
                             <div class = "errorMessage">
@@ -47,13 +47,23 @@
                             <% } %>
                     </div>
                     <div class="input-field">
-                        <input type="password" placeholder="Confirma tu password" required value="" name="password2">
+                        <input type="password" placeholder="Confirma tu password"  value="" name="password2">
                         <img src="/images/check-circle.svg">
+                        <% if (locals.errors && errors.password){ %>
+                            <div class = "errorMessage">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
                     </div>
 
                     <div class="container-image-perfil">
                         <label class="img-perfil">Imagen de perfil</label>
                         <input type="file" name="inputImg">
+                        <% if (locals.errors && errors.inputImg){ %>
+                            <div class = "errorMessage">
+                                <%= errors.inputImg.msg %>
+                            </div>
+                            <% } %>
                     </div>
 
                     <div class="checkbox-text">

@@ -1,15 +1,14 @@
 const fs = require ('fs');
 const path = require ('path');
-const {validationResult} = require ('express-validator');
 let db = require('../src/database/models')
 var bcrypt = require('bcryptjs');
-
+const {validationResult} = require ('express-validator');
 
 const user = {
 
     getData: function(req,res){
-        db.User.findAll()   
-        .then(usuarios=> console.log(usuarios))    
+        db.User.findAll()
+        .then(usuarios=> console.log(usuarios))
     },
 
     vistaLogin: (req, res) => {
@@ -32,13 +31,13 @@ const user = {
                 }
                 else{
                     res.render('login')
-                }         
+                }
             }
             else{
                 res.render('login')
             }
         } )
-        
+
     },
 
     loginAdmin: (req, res) => {
@@ -55,25 +54,37 @@ const user = {
 
     findByPk: function(id){
     },
-    
+
     register: (req, res) => {
-        res.render('register')  
+        res.render('register')
     },
 
     create: function (req, res) {
+
         let user = {
             name: req.body.name,
             email: req.body.email,
-            image: req.file.filename,
+            image: req.file? req.file.filename : null,
             password: bcrypt.hashSync(req.body.password, 10)
         }
-        
-        db.User.create(user)
-        res.redirect('/')
+        const validations = validationResult(req);
+
+        if (validations.errors.length > 0){
+            return res.render('register',
+            {errors: validations.mapped(),
+            oldData: req.body
+            })
+        }
+
+        else{
+            db.User.create(user)
+            res.redirect('/')}
+
+
     },
 
     delete: function(req,res){
-        
+
     }
 }
 
