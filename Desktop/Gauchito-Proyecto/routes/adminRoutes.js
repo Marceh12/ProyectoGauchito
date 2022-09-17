@@ -4,6 +4,7 @@ const adminController = require('../controllers/admincontroller');
 const multer = require ('multer');
 const path = require ('path');
 const uploadFile = require ('../middlewares/multerProduct')
+const validations = require('../middlewares/validationsProduct')
 
 
 
@@ -11,7 +12,7 @@ router.get('/', adminController.productsAll)
 
 //ruta para crear registros
 router.get('/create', adminController.create);
-router.post('/create',uploadFile.single('productImage'), adminController.newProduct);
+router.post('/create',uploadFile.single('productImage'), validations,  adminController.newProduct);
 
 //ruta editar productos
 router.get('/edit/:id', adminController.edit);

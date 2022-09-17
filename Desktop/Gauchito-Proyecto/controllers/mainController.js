@@ -8,9 +8,6 @@ const controller =  {
         res.render('index')
     },
 
-    
-
-    
 
     create: (req, res) => {
         res.render ('create')

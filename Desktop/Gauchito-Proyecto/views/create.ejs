@@ -13,21 +13,36 @@
     <div class="contenedor-form">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" name="name" aria-describedby="nombre" placeholder="nombre">
+          <input type="text" class="form-control" name="name"  placeholder="nombre" value="<%= locals.oldData ? oldData.name : null%>">
         </div>
+        <% if (locals.errors && errors.name){ %>
+            <div >
+                <p class = "errorMessage"><%= errors.name.msg %></p>
+            </div>
+            <% } %>
 
         <div class="form-group">
             <label for="nombre">Descripción</label>
-            <input type="text" class="form-control-desc" name="description" aria-describedby="descripcion" placeholder="descripcion">
+            <input type="text" class="form-control-desc" name="description"  placeholder="descripcion" value="<%= locals.oldData ? oldData.description : null%>">
         </div>
+        <% if (locals.errors && errors.description){ %>
+            <div >
+                <p class = "errorMessage"><%= errors.description.msg %></p>
+            </div>
+            <% } %>
 
         <div class="form-group-img">
             <label for="picture">Imagen</label>
             <input type="file" name = "productImage">
         </div>
+        <% if (locals.errors && errors.productImage){ %>
+            <div class = "errorMessage">
+                <%= errors.productImage.msg %>
+            </div>
+            <% } %>
 
         <div class="form-group">
-            <label for="nombre">Categoria</label>
+            <label for="nombre" class="form-group-cat">Categoria</label>
             <select name = "category" id = "category">
                 <option value="empanadas">empanadas</option>
                 <option value="alfajores">alfajores</option>
@@ -37,13 +52,23 @@
         
         <div class="form-group">
             <label for="nombre">Precio</label>
-            <input type="number" class="form-control" name="price" aria-describedby="precio" placeholder="precio">
+            <input type="number" class="form-control" name="price" aria-describedby="precio" placeholder="precio" value="<%= locals.oldData ? oldData.price : null%>">
         </div>
+        <% if (locals.errors && errors.price){ %>
+            <div>
+                <p  class = "errorMessage"><%= errors.price.msg %></p>
+            </div>
+            <% } %>
 
         <div class="form-group">
             <label for="nombre">Stock</label>
-            <input type="number" class="form-control" name="stock">
+            <input type="number" class="form-control" name="stock" value="<%= locals.oldData ? oldData.stock : null%>">
         </div>
+        <% if (locals.errors && errors.stock){ %>
+            <div>
+                <p  class = "errorMessage"><%= errors.stock.msg %></p>
+            </div>
+            <% } %>
     </div>
 
         <div class="container-button-create">

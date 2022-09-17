@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 let db = require('../src/database/models')
+const {validationResult} = require ('express-validator');
 
 const adminController = {
     productsAll: function(req,res){
@@ -22,11 +23,22 @@ const adminController = {
             category: req.body.category,
             price: req.body.price,
             description: req.body.description,
-            image: req.file.filename,
+            image: req.file ? req.file.filename : null,
             stock: req.body.stock
         }
-        db.Product.create(product)
-        res.redirect('/panelAdmin')
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0){
+            res.render('create', 
+            {errors : resultValidation.mapped(), 
+            oldData: req.body})
+        }
+        else{
+            db.Product.create(product)
+            res.redirect('/panelAdmin')
+        }
+        
     },
 
     edit: (req,res) => {
