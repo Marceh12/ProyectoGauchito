@@ -15,8 +15,10 @@
         </div>
     </header>
 <body class="body-admin">
+    <div class="contenedor-boton-crear">
+        <a href="/panelAdmin/create" class="button-new-product">Nuevo producto</a>
+    </div>
     <div class="container-panel-admin">
-        <a href="/create"><i></i></a>
         <table class="table">
             <tbody class="tbody-admin">
                 <thead class="title-fixed-admin">
@@ -39,17 +41,19 @@
                     <td class="data-json"><%= product.category %></td>
                     <td class="data-json"><%= product.price %></td>
                     <td class="data-json"><%= product.stock %></td>
+
                     <td>
-                        <a href="panelAdmin/edit/<%= product.id%>" class="button-admin-classAll">Editar</a>
+                    <a href="panelAdmin/edit/<%= product.id%>" class="button-admin-classAll">Editar</a>
 
                     <form action="/panelAdmin/delete/<%= product.id%>?_method=DELETE" method="POST">
-                        <button class="button-admin-classAll" type="submit">Delete</button>    
+                    <button class="button-admin-classAll" type="submit">Delete</button>    
                     </form>
                     </td>
+                
                 </tr>
                 <% }) %>
             </tbody>
-            <a href="/panelAdmin/create" class="button-new-product">Nuevo producto</a>
+            
         </table>
 
         
