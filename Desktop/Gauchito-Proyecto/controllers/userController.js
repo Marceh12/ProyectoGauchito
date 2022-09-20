@@ -16,6 +16,15 @@ const user = {
     },
 
     login: (req, res) => {
+        const validations = validationResult(req);
+
+        if (validations.errors.length > 0){
+            return res.render('login',
+            {errors: validations.mapped(),
+            oldData: req.body
+            })
+        }
+
         db.User.findOne({
         where: {email: req.body.email}
         })
@@ -27,14 +36,27 @@ const user = {
                     delete user.password
                     //login
                     //render vista
-                    res.send(user)
+                    res.render('index')
                 }
                 else{
-                    res.render('login')
+                    res.render('login', {
+                        errors:{   
+                            password: {
+                                msg: 'la contraseña es incorrecta'
+                            }
+                        },
+                        oldData: req.body    
+                    })
                 }
             }
             else{
-                res.render('login')
+                res.render('login',{
+                    errors:{   
+                        email: {
+                            msg: 'El Email no se encuentra registrado'
+                        }
+                    }
+                })
             }
         } )
 
@@ -60,13 +82,7 @@ const user = {
     },
 
     create: function (req, res) {
-
-        let user = {
-            name: req.body.name,
-            email: req.body.email,
-            image: req.file? req.file.filename : null,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
+        
         const validations = validationResult(req);
 
         if (validations.errors.length > 0){
@@ -76,17 +92,35 @@ const user = {
             })
         }
 
-        else{
-            db.User.create(user)
-            res.redirect('/')}
+        db.User.findOne({
+            where: {email: req.body.email}
+            })
+            .then (user=>{
+                if (user){      
+                        return res.render('register', {
+                                errors: {
+                                    email: {
+                                        msg: 'Este email ya esta  registrado'
+                                        }
+                                },
+                                oldData: req.body
+                            })
+                    
+                }
+                else{
+                    let user = {
+                        name: req.body.name,
+                        email: req.body.email,
+                        image: req.file? req.file.filename : null,
+                        password: bcrypt.hashSync(req.body.password, 10)
+                    }
 
-
-    },
-
-    delete: function(req,res){
-
+                        db.User.create(user)
+                        res.redirect('/')
+                    }
+                })
     }
-}
+} 
 
 
 module.exports = user;
