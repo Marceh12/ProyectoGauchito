@@ -34,9 +34,9 @@ const user = {
 
                 if(pass){
                     delete user.password
-                    //login
-                    //render vista
-                    res.render('index')
+                    req.session.userLogged = user;
+                
+                    res.redirect('/users/profile')
                 }
                 else{
                     res.render('login', {
@@ -60,6 +60,17 @@ const user = {
             }
         } )
 
+    },
+
+    logout:  (req, res) => {
+        req.session.destroy();
+        return res.redirect('/')
+    },
+
+    userProfile:  (req, res) => {
+        res.render ('userProfile',{
+            user: req.session.userLogged
+        })
     },
 
     loginAdmin: (req, res) => {

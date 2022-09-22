@@ -5,8 +5,12 @@ const path = require ('path')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
+// Middleware de aplicacion para usuario logeado
+
+const userLoggedmiddleware = require('./middlewares/userLoggedMiddleware');
+
 //depencia para los metodos put y delete
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 
 // ver
 const { json } = require('express');
@@ -15,11 +19,8 @@ const { json } = require('express');
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const adminRoutes = require('./routes/adminRoutes');
-const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./routes/userRoutes');
 
-//urlencoded permite capturar informacion enviada en un formulario via POST mediante el metodo req.body
-app.use (express.urlencoded({extended: false}));
-app.use (express.json());
 
 app.set ('views', path.join (__dirname, 'views'));
 app.set("view engine", "ejs");
@@ -32,6 +33,14 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(express.urlencoded({extended:false}));
 app.use(express(json));
 
+app.use(session({
+  secret: 'es un secreto',
+  resave: false,
+  saveUninitialized:false
+}))
+
+app.use(userLoggedmiddleware);
+
 // //Aqui coloco el Middleware para activar lo referido a las cookies
 // app.use(cookieParser());
 
@@ -42,8 +51,6 @@ app.use(express(json));
 app.listen(process.env.PORT || 3050, function () {
   console.log("servidor corriendo en el puerto 3050");
 });
-
-
 
 /////nuevo
 //capturar datos del formulario

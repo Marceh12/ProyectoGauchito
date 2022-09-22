@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
+    <title>Gauchito Git</title>
+</head>
+<body>
+    <%- include ('./partials/header')%>
+    <div class="contendor-buttons-profile">
+        <button class="boton-profile"><a href="" class="letra-btn-profile">Editar</a> </button>
+        <button class="boton-profile"><a href="/users/logout" class="letra-btn-profile">Logout</a> </button>
+    </div>
+    <div class="contenedor-profile">
+
+        <h1>Welcome <%= user.name  %> </h1>
+        <img src="/images/<%= user.image  %> " alt="" class="image-profile">
+        <p class="email-profile"> email: <%= user.email %> </p>
+
+    </div>
+    
+    <%- include ('./partials/footer')%>
+    
+</body>
+</html>
