@@ -3,12 +3,13 @@ const path = require ('path');
 let db = require('../src/database/models')
 var bcrypt = require('bcryptjs');
 const {validationResult} = require ('express-validator');
+const { log } = require('console');
 
 const user = {
 
     getData: function(req,res){
-        db.User.findAll()
-        .then(usuarios=> console.log(usuarios))
+        // db.User.findAll()
+        // .then(usuarios=> console.log(usuarios))
     },
 
     vistaLogin: (req, res) => {
@@ -35,6 +36,7 @@ const user = {
                 if(pass){
                     delete user.password
                     req.session.userLogged = user;
+                    console.log(user);
                 
                     res.redirect('/users/profile')
                 }
@@ -68,9 +70,30 @@ const user = {
     },
 
     userProfile:  (req, res) => {
+        console.log(req.cookies.userEmail)
         res.render ('userProfile',{
             user: req.session.userLogged
         })
+    },
+
+    editProfile:  (req, res) => {
+        db.User.findByPk(req.params.id)
+        .then (user => {
+            res.render('profileEdit',{userToEdit : user})})
+    },
+
+    profileEditProccess: (req,res) =>{
+        let user = {
+            name: req.body.name? req.body.name : req.body.dataViejaName,
+            email: req.body.email? req.body.email : req.body.dataViejaEmail,
+            image: req.file? req.file.filename : req.body.dataViejaImage,
+            
+        }
+        console.log(user)
+        db.User.update(user,
+            {where:{id: req.params.id}}
+            )
+        .then (user=> {res.redirect('/')})
     },
 
     loginAdmin: (req, res) => {
@@ -89,6 +112,7 @@ const user = {
     },
 
     register: (req, res) => {
+        
         res.render('register')
     },
 

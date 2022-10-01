@@ -2,11 +2,22 @@
     <nav class="nav">
         <a href="/"><img src="/images/logo.png" alt="logo" class="logo"></a>
         <% if (locals.isLogged){ %>
-            usuario
+            <div id="header-menu">
+                <ul class="nav-header">
+                    <li><a href="#"> Hi <%= locals.userLogged.name %>  </a>
+                        <ul> <a href="/users/profile"> Profile</a></ul>
+                        <ul> <a href=""> Cart</a> </ul>
+                    </li>
+                    <li><a href="/users/panelAdmin"> Administrar</a></li>
+                    <li><a href="/users/logout"> Logout</a></li>
+                </ul>
+
+            </div>
             <% } else { %>  
+            </div>
         <ul class="menu">
             <li><a href="/users/login">Login</a></li>
-            <li><a href="/users/loginAdmin">admin</a></li>
+            <!-- <li><a href="/users/loginAdmin">admin</a></li> -->
         </ul>
         <% } %> 
     </nav>

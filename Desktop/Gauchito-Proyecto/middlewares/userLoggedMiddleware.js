@@ -1,6 +1,14 @@
+let db = require('../src/database/models')
+
 function userLoggedmiddleware (req,res,next){
-    let isLogged = false;
+
     res.locals.isLogged = false;
+
+    if(req.session.userLogged){
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged
+    }
+
 
     next()
 }

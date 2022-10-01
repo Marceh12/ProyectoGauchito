@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="css/styles.css">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel administrador</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-
+<%- include ('./partials/header')%>
     <header>
         <div class="nav-admin">
             <label class="admin-panel">PANEL ADMINISTRADOR</label>
-            <a href="users/loginAdmin"><button class="button-admin-logout">logout</button></a>
         </div>
     </header>
 <body class="body-admin">
@@ -43,7 +42,7 @@
                     <td class="data-json"><%= product.stock %></td>
 
                     <td>
-                    <a href="panelAdmin/edit/<%= product.id%>" class="button-admin-classAll">Editar</a>
+                    <a href="/panelAdmin/edit/<%= product.id%>" class="button-admin-classAll">Editar</a>
 
                     <form action="/panelAdmin/delete/<%= product.id%>?_method=DELETE" method="POST">
                     <button class="button-admin-classAll" type="submit">Delete</button>    

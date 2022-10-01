@@ -3,6 +3,7 @@ const fs = require('fs');
 let db = require('../src/database/models')
 const {validationResult} = require ('express-validator');
 
+
 const adminController = {
     productsAll: function(req,res){
         db.Product.findAll()
@@ -51,7 +52,6 @@ const adminController = {
     // UPDATE CONTROLLERS
 
     update: (req,res) => {
-        console.log(req.body)
         
         let product = {
             name: req.body.name? req.body.name : req.body.dataViejaName,

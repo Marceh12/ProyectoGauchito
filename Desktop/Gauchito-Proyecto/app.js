@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const path = require ('path')
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
+const cookies = require('cookie-parser');
 
 // Middleware de aplicacion para usuario logeado
 
@@ -38,14 +38,10 @@ app.use(session({
   resave: false,
   saveUninitialized:false
 }))
+app.use(cookies());
 
 app.use(userLoggedmiddleware);
 
-// //Aqui coloco el Middleware para activar lo referido a las cookies
-// app.use(cookieParser());
-
-// //Middleware de aplicación que se encarga de controlar si el usuario está logueado o no.
-// app.use(access);
 
 //inicio de server
 app.listen(process.env.PORT || 3050, function () {

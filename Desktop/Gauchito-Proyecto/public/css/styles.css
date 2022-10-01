@@ -175,8 +175,8 @@ footer {
 }
 
 .card-products {
-  width: 25%;
-  height: auto;
+  width: 20%;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,6 +398,7 @@ footer {
 
 .body-create-admin{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing:border-box
@@ -405,7 +406,9 @@ footer {
 }
 
 .data-json {
+    
     font-size: 13px;
+    font-weight: 600;
     text-align: center;
     width: 50px;
     border-bottom: 2px solid rgb(190, 190, 190);
@@ -413,6 +416,7 @@ footer {
 
 .data-json-desc{
     font-size: 13px;
+    font-weight: 600;
     text-align: center;
     border-bottom: 2px solid rgb(190, 190, 190);
 }
@@ -474,10 +478,12 @@ footer {
     width: 120px;
     height: 40px;
     border: none;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 800;
     text-decoration: none;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 
 
 }
@@ -490,6 +496,7 @@ footer {
 
 .form-control{
   padding: 3px;
+  
   border-radius: 3px;
   text-align:end;
   border: 2px solid gray;
@@ -508,6 +515,8 @@ footer {
 }
 
 .form-admin {
+  width: 100%;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -529,9 +538,11 @@ footer {
   height: 70px;
   border: 2px solid gray;
   margin-left: 5px;
+  border-radius: 10px;
 }
 
 .form-group-img {
+  font-weight: 800;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -540,7 +551,13 @@ footer {
 }
 
 .contenedor-form{
-  margin: 20px
+  margin: 20px;
+  width: 80%;
+}
+
+.form-group label{
+  font-weight: 800;
+  
 }
 /* FIN PANEL ADMINISTRADOR */
 
@@ -600,4 +617,113 @@ footer {
 
 .email-profile{
   margin-top: 2%;
+  font-size: 20px;
+}
+
+/* HEADER MENU */
+
+.nav-header ul, .nav-header li{
+  list-style: none;
+}
+
+.nav-header a{
+  
+  color: black;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-weight: 800;
+  padding: 10px 10px;
+  display: block;
+}
+
+.nav-header li a:hover{
+  padding: 5px 10px;
+  background: rgba(15, 161, 219, 0.521);
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.nav-header li ul a{
+  border: none;
+}
+
+.nav-header > li {
+  float: left;
+}
+
+.nav-header li ul{
+  display: none;
+  position: relative;
+  min-width: 140px;
+  color: #2431a8;
+  font-weight: 700;
+  text-align: start;
+  
+}
+
+
+.nav-header li:hover > ul {
+  display: block;
+}
+
+/* EDICION PROFILE*/
+
+.edit-profile-body{
+  margin: 0;
+  padding: 0 ;
+  box-sizing: content-box;
+  
+}
+
+.contenedor-form-edit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  border-top: 3px solid gray;
+}
+
+.form-group-edit{
+  color: rgb(41, 76, 190);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+
+.form-group-edit label{
+  font-size: 20px;
+  padding: 10px;
+}
+
+.form-group-edit input{
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+.btn-submit-edit{
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #4453dc;
+  margin-top: 20px;
+  border: none;
+  margin: 5px;
+}
+
+.botones-edit-profile{
+  display: flex;
+  width: 20%;
+
+
 }

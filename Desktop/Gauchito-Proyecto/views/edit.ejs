@@ -9,6 +9,7 @@
 </head>
 
 <body class="body-create-admin">
+    <%- include ('./partials/header')%>
     <form class="form-admin" method="POST" action="/panelAdmin/edit/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
         <div class="contenedor-form">
             <div class="form-group">
@@ -59,5 +60,6 @@
 
     
     </form>
+    
 </body>
 </html>

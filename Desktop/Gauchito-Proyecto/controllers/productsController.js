@@ -16,7 +16,7 @@ const productsController = {
         
         db.Product.findByPk(req.params.id)
         .then ((product) => {
-            console.log(product)
+            
         res.render('productDetail',{product})})
     }
 

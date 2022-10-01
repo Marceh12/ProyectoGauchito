@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
+    <title>Gauchito Git</title>
+</head>
+<body class="edit-profile-body">
+    <%- include ('./partials/header')%>
+    
+
+        <form class="" method="POST" action="/users/profile/<%= userToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+            <div class="contenedor-form-edit">
+                <div class="form-group-edit">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="" name="name" value="<%= userToEdit.name %>">
+                    <input type="hidden" name="dataViejaName" value="<%= userToEdit.name %>">
+                </div>
+    
+                <div class="form-group-edit">
+                    <label for="nombre">Email</label>
+                    <input type="text" class="" name="email" value="<%= userToEdit.email %>">
+                    <input type="hidden" name="dataViejaEmail" value="<%= userToEdit.description %>">
+                </div>
+    
+                <div class="form-group-edit">
+                    <label for="picture">Imagen</label>
+                    <img src="<%= userToEdit.image %>" alt="">
+                    <input type="file" name="image" value="<%= userToEdit.image %>">
+                    <input type="hidden"  name="dataViejaImage" value="<%= userToEdit.image %>"  img src="/images/<%= userToEdit.image %>">
+                </div>
+
+                <div class="botones-edit-profile">
+                <input type="submit" class="btn-submit-edit" value="Confirmar">
+                <input type="button" class="btn-submit-edit" value="Cancelar">
+                </div>    
+        </form>
+    
+    
+</body>
+</html>

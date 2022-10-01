@@ -11,18 +11,24 @@ const validationsUser = require ('../middlewares/validationsUser');
 const validacionesLogin = require ('../middlewares/validacionesLogin');
 const guestMiddleware = require ('../middlewares/guestmiddleware');
 const authMiddleware = require ('../middlewares/authMiddleware');
+const adminFilter = require ('../middlewares/adminMiddleware');
+const multerUser = require('../middlewares/multerUser')
 
 const { body } = require('express-validator')
 
 
 
-// Login aministrador
-router.get("/loginAdmin",userController.loginAdmin);
+
+
+router.get('/panelAdmin',adminFilter, adminController.productsAll);
+
 
 // Login Usuarios
 router.get("/login",guestMiddleware, userController.vistaLogin);
 router.post("/login",validacionesLogin,  userController.login);
 router.get("/profile",authMiddleware, userController.userProfile);
+router.get("/profile/:id", userController.editProfile);
+router.put("/profile/:id",uploadFile.single('image'), userController.profileEditProccess);
 
 // Logout
 

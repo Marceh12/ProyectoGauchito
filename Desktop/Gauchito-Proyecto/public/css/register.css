@@ -133,3 +133,26 @@ body {
 .container-image-perfil{
     margin-top: 25px;
 }
+
+/* validaciones */
+
+.is-invalid{
+    
+    border-radius: 15px;
+    padding: 2px;
+    background-color: red;
+    opacity: 50%;
+}
+
+.is-valid{
+    border-radius: 15px;
+    
+    background-color: rgb(56, 142, 227);
+    opacity: 50%;
+}
+
+.errores{
+    color: red;
+    font-weight: 600;
+    padding: 3px;
+}

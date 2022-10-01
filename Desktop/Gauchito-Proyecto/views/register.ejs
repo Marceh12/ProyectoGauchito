@@ -16,7 +16,6 @@
         <div class="container-form">
             <div class="forms">
                 <span class="title">Registrarse</span>
-                
                 <form method="post" action="/users/register" enctype="multipart/form-data" >
                     <div class="input-field">
                         <input type="text" placeholder="Ingresa tu nombre" id = "name"  name="name" value="<%= locals.oldData ? oldData.name : null%>">
@@ -46,19 +45,10 @@
                             </div>
                             <% } %>
                     </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="Confirma tu password"  value="" name="password2">
-                        <img src="/images/check-circle.svg">
-                        <% if (locals.errors && errors.password){ %>
-                            <div class = "errorMessage">
-                                <%= errors.password.msg %>
-                            </div>
-                            <% } %>
-                    </div>
-
+                    
                     <div class="container-image-perfil">
                         <label class="img-perfil">Imagen de perfil</label>
-                        <input type="file" name="inputImg">
+                        <input type="file" name="inputImg" id="inputImg">
                         <% if (locals.errors && errors.inputImg){ %>
                             <div class = "errorMessage">
                                 <%= errors.inputImg.msg %>
@@ -75,11 +65,12 @@
                     <div class="input-field button">
                         <input type="submit" value="Registrarse">
                     </div>
-                    
+                    <ul class="errores"></ul>
                                     
                 </form>
         </div>
     </div>
-
+<script src="/js/validacionesRegistro.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
