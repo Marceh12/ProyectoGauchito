@@ -20,6 +20,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const adminRoutes = require('./routes/adminRoutes');
 const userRoutes = require('./routes/userRoutes');
+const routesApis = require('./routes/routesApis')
 
 
 app.set ('views', path.join (__dirname, 'views'));
@@ -55,5 +56,5 @@ app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/panelAdmin', adminRoutes);
 app.use('/users', userRoutes);
-
+app.use('/gauchitoAPIS', routesApis);
 
