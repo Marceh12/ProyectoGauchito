@@ -10,11 +10,12 @@
 </head>
 
 <body class="body-create-admin">
+    <a href="/"><img src="/images/logo.png" alt="logo" class="logo" id="logo-create"></a>
     <form class="form-admin" method="post" action="/panelAdmin/create" enctype="multipart/form-data">
     <div class="contenedor-form">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" name="name"  placeholder="nombre" value="<%= locals.oldData ? oldData.name : null%>">
+          <input type="text" class="form-control" name="name" id="name"  placeholder="nombre" value="<%= locals.oldData ? oldData.name : null%>">
         </div>
         <% if (locals.errors && errors.name){ %>
             <div >
@@ -24,7 +25,7 @@
 
         <div class="form-group">
             <label for="nombre">Descripción</label>
-            <input type="text" class="form-control-desc" name="description"  placeholder="descripcion" value="<%= locals.oldData ? oldData.description : null%>">
+            <input type="text" class="form-control-desc" name="description" id="description" placeholder="descripcion" value="<%= locals.oldData ? oldData.description : null%>">
         </div>
         <% if (locals.errors && errors.description){ %>
             <div >
@@ -34,7 +35,7 @@
 
         <div class="form-group-img">
             <label for="picture">Imagen</label>
-            <input type="file" name = "productImage">
+            <input type="file" name = "productImage" id="productImage">
         </div>
         <% if (locals.errors && errors.productImage){ %>
             <div class = "errorMessage">
@@ -53,7 +54,7 @@
         
         <div class="form-group">
             <label for="nombre">Precio</label>
-            <input type="number" class="form-control" name="price" aria-describedby="precio" placeholder="precio" value="<%= locals.oldData ? oldData.price : null%>">
+            <input type="number" class="form-control" name="price" id="price" aria-describedby="precio" placeholder="precio" value="<%= locals.oldData ? oldData.price : null%>">
         </div>
         <% if (locals.errors && errors.price){ %>
             <div>
@@ -63,7 +64,7 @@
 
         <div class="form-group">
             <label for="nombre">Stock</label>
-            <input type="number" class="form-control" name="stock" value="<%= locals.oldData ? oldData.stock : null%>">
+            <input type="number" class="form-control" name="stock" id="stock" value="<%= locals.oldData ? oldData.stock : null%>">
         </div>
         <% if (locals.errors && errors.stock){ %>
             <div>
@@ -76,6 +77,10 @@
             <input type="submit" class="button-admin-create" value = 'Guardar'>
             <a href="/panelAdmin" class="button-admin-create">Cancelar</a>
         </div>
-      </form>
+        <ul class="errores"></ul>
+    </form>
+      
+<script src="/js/validacionesFrontProduct.js"></script>
+
 </body>
 </html>

@@ -3,7 +3,8 @@ const fs = require ('fs');
 
 module.exports= [
     body('name').notEmpty().withMessage('El producto debe tener un nombre').isLength({min:4, max: 40}).withMessage('El producto debe tener entre 4 y 40 caracteres'),
-    body('description').notEmpty().withMessage('Debes añadir una descripcion al producto'),
+    body('description').notEmpty().withMessage('Debes añadir una descripcion al producto')
+    .isLength({min:10, max: 500}).withMessage('La descripcion debe tener entre 10 y 500 caracteres'),
     body('price').notEmpty().withMessage('Debes poner precio al producto').isFloat({min:0, max: 1000000}),
     body('stock').notEmpty().withMessage('Ingresa la cantidad de productos disponibles').isFloat({min:0, max: 5000}),
     body('productImage').custom((value,{ req })=>{

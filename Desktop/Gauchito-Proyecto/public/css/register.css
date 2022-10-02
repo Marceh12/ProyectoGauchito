@@ -134,18 +134,22 @@ body {
     margin-top: 25px;
 }
 
+#inputImg{
+    border-radius: 5px;
+}
+
 /* validaciones */
 
 .is-invalid{
     
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 2px;
     background-color: red;
     opacity: 50%;
 }
 
 .is-valid{
-    border-radius: 15px;
+    border-radius: 10px;
     
     background-color: rgb(56, 142, 227);
     opacity: 50%;
