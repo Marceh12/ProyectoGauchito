@@ -154,6 +154,10 @@ const user = {
                         res.redirect('/')
                     }
                 })
+    },
+
+    vistaCarrito:function (req, res) {
+        res.render('cart')
     }
 } 
 

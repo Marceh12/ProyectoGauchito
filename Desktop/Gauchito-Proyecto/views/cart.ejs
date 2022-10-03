@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauchito Git</title>
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
+    
+</head>
+<%- include ('./partials/header')%>
+<body>
+    <header id="header">
+        <h1>Cart</h1>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </header>
+    <div class="contenedor" id="contenedor">
+        <div>
+            <img class="img-cart" src="/images/Alfajor Blanco.webp" alt="">
+            <div class="informacion">
+                <p> producto 1</p>
+                <p class="precio"> $ 110</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img class="img-cart" src="/images/matecard.jpg" alt="">
+            <div class="informacion">
+                <p> producto 1</p>
+                <p class="precio"> $ 110</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <div>
+            <img class="img-cart" src="/images/mat-yerba.jpg" alt="">
+            <div class="informacion">
+                <p> producto 1</p>
+                <p class="precio"> $ 110</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include ('./partials/footer')%>
+</body>
+</html>

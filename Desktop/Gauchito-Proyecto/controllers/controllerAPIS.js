@@ -5,8 +5,10 @@ const controladorAPIS =
     productoId: (req,res) => {
 		db.Product.findByPk(req.params.id)
 			.then(producto => {
+				let urlImage = 'http://localhost:3050/images/' + producto.image
 				return res.status(200).json({
 					data: producto,
+					urlImage,
 					status: 200
 				})
 			})
@@ -31,12 +33,12 @@ const controladorAPIS =
 				return res.status(200).json({
 					data: prodTotales,
 					totalCount: cantidadProductos.total,
-					categorias: [
-						{empanadas: contadores.empanadas},
-						{alfajores: contadores.alfajores},
-						{mate: contadores.mate},
+					categories: {
+						empanadas: contadores.empanadas,
+						alfajores: contadores.alfajores,
+						mate: contadores.mate,
 
-					],
+					},
 					categoryCount: contCat,
 					status: 200
 				})

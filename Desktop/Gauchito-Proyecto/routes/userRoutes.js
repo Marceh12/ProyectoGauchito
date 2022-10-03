@@ -30,6 +30,10 @@ router.get("/profile",authMiddleware, userController.userProfile);
 router.get("/profile/:id", userController.editProfile);
 router.put("/profile/:id",uploadFile.single('image'), userController.profileEditProccess);
 
+// Carrito
+
+router.get("/cart", userController.vistaCarrito);
+
 // Logout
 
 router.get('/logout', userController.logout)
