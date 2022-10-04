@@ -8,40 +8,73 @@
     <link rel="stylesheet" href="/css/carrito.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/6c2885ab71.js" crossorigin="anonymous"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Roboto+Condensed&display=swap" rel="stylesheet"> 
 </head>
 <%- include ('./partials/header')%>
 <body>
-    <header id="header">
+    <div id="header">
         <h1>Cart</h1>
         <i class="fa-solid fa-cart-shopping"></i>
-    </header>
+    </div>
     <div class="contenedor" id="contenedor">
         <div>
             <img class="img-cart" src="/images/Alfajor Blanco.webp" alt="">
             <div class="informacion">
                 <p> producto 1</p>
-                <p class="precio"> $ 110</p>
-                <button>Comprar</button>
+                <p class="precio"> $ 215</p>
+                
             </div>
         </div>
         <div>
             <img class="img-cart" src="/images/matecard.jpg" alt="">
             <div class="informacion">
                 <p> producto 1</p>
-                <p class="precio"> $ 110</p>
-                <button>Comprar</button>
+                <p class="precio"> $ 550</p>
+                
             </div>
         </div>
         <div>
             <img class="img-cart" src="/images/mat-yerba.jpg" alt="">
             <div class="informacion">
                 <p> producto 1</p>
-                <p class="precio"> $ 110</p>
-                <button>Comprar</button>
+                <p class="precio"> $ 680</p>
+                
             </div>
         </div>
+        
     </div>
+    <div class="contenedor-tabla">
+        <table class="head-tabla">
+            <thead>
+                <tr>
+                <th class="titulo-tabla">PRODUCTO</th>
+                <th class="titulo-tabla">PRECIO</th>
+                </tr>
+            </thead>
+            <tbody class="body-tabla">
+                <tr>
+                    <td> Producto 1</td>
+                    <td> $ 215 </td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td> $ 550</td>
+                </tr>
+                <tr>
+                <td>Producto 3</td>
+                <td> $ 680</td>
+                </tr>
+                <tr>
+                    <td class="total-carrito">TOTAL</td>
+                    <td class="total-carrito"> $ 1.445</td>
+                    </tr>
+              </tbody>
+        </table>
+     </div>
+
+     <div class="comprar-carro">
+        <a href="#" class="boton-compra">Comprar</a>
+     </div>
 
 
 
